@@ -5,6 +5,6 @@ see also noahzarro/attila-app
 
 ### GET
 
-`/activities/beavers` returns the JSON-File with all upcomming avtivities from the group *beavers*
+`/activities/beavers` returns the JSON-File with all upcomming avtivities from the group *beavers*  
 `/images/big_chungus.jpg` returns the image with name *big_chungus.jpg*
 
