@@ -51,32 +51,48 @@ def new_activity():
             return "Invalid Request: No data part in request"
         data = request.json
 
-        #TODO save data
+        append_activity(data)
         return "We recieved your stuff, thank you"
-
-
 
 @app.route("/<request>")
 def bad_request(request):
     return "Invalid Request: <b>" + request + "</b> does not exist. duu Arsch"  #BAD REQUEST
 
-def authenticate():
+
+
+
+def authenticate(): # anyone an idea???
     return True
+
+def append_activity(data):
+    filename = "data/activities/" + data["grade"] + ".json"
+    data["id"] = get_id(data["grade"])
+    with open(filename, "r") as f:
+        content = json.load(f)
+    content["activities"].append(data)
+    with open(filename, "w") as f:
+        json.dump(content, f, indent=4)
+
+def get_id(grade): #TODO
+    return counter(grade)
+
+def get_imagename(extension):
+    number_image = counter("last_image")
+    return "image_" + f'{number_image:06d}' + "." + extension # return filenumber for the next image
+
+def counter(element):
+        with open('counter.json', "r", encoding='utf8') as f: # open counter-file
+            counter = json.load(f)
+
+        number = counter[element] +1 #get number for next image
+        counter[element] = number #write the just used image number
+
+        with open('counter.json', 'w', encoding='utf8') as f: # open counter-file to write number
+            json.dump(counter, f, indent=4) #write
+        return number
 
 def allowed_file(filename):
     return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_IMAGE_EXTENSIONS
-
-def get_imagename(extension):
-    with open('var.json', "r") as f: # open var-file
-        var = json.load(f)
-
-    number_image = var["last_image"] +1 #get number for next image
-    var["last_image"] = number_image #write the just used image number
-
-    with open('var.json', 'w') as f: # open var-file to write number
-        json.dump(var, f) #write
-
-    return "image_" + f'{number_image:06d}' + "." + extension # return filenumber for the next image
 
 if __name__ == "__main__":
   app.run(host="0.0.0.0", port="8081", threaded=False)
