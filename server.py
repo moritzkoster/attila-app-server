@@ -2,6 +2,9 @@ from flask import Flask, request, render_template, send_from_directory
 import json
 import os
 
+import python.datamgmt as dm
+import python.auth as auth
+
 ALLOWED_IMAGE_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif'}
 
 app = Flask(__name__, static_url_path="/static")
@@ -25,74 +28,20 @@ def images(name):
 
 @app.route('/imageforactivity', methods=['GET', 'POST'])
 def upload_image():
-    if not authenticate(): #TODO
+    if not auth.authenticate(): #TODO
         return "You are not allowed to do This"
+    return dm.save_image(request, purpose="activity")
 
-    if request.method == 'POST':
-        if 'file' not in request.files: # check if the post request has the file part
-            return "Invalid Request: No file part in request"
-        file = request.files['file']
-        if file.filename == '': #check if no file
-            return "Invalid Request: There is no file selected"
-
-        if file and allowed_file(file.filename):
-            extension = file.filename.split(".")[1] # check file extension/format
-            imagename = get_imagename(extension) #new filename + old extension
-            file.save(os.path.join("data/images", imagename)) #save file with new name
-            return json.dumps({"name": imagename, "old_name": file.filename}) #retunr confirmation
 
 @app.route('/newactivity', methods=['GET', 'POST'])
 def new_activity():
-    if not authenticate(): #TODO
+    if not auth.authenticate(): #TODO
         return "You are not allowed to do This"
-
-    if request.method == 'POST':
-        if not request.json: # check if the post request has the json part
-            return "Invalid Request: No data part in request"
-        data = request.json
-
-        append_activity(data)
-        return "We recieved your stuff, thank you"
+    return dm.new_activity(request)
 
 @app.route("/<request>")
 def bad_request(request):
     return "Invalid Request: <b>" + request + "</b> does not exist. duu Arsch"  #BAD REQUEST
-
-
-
-
-def authenticate(): # anyone an idea???
-    return True
-
-def append_activity(data):
-    filename = "data/activities/" + data["grade"] + ".json"
-    data["id"] = get_id(data["grade"])
-    with open(filename, "r") as f:
-        content = json.load(f)
-    content["activities"].append(data)
-    with open(filename, "w") as f:
-        json.dump(content, f, indent=4)
-
-def get_id(grade): #TODO
-    return counter(grade)
-
-def get_imagename(extension):
-    number_image = counter("last_image")
-    return "image_" + f'{number_image:06d}' + "." + extension # return filenumber for the next image
-
-def counter(element):
-        with open('counter.json', "r", encoding='utf8') as f: # open counter-file
-            counter = json.load(f)
-
-        number = counter[element] +1 #get number for next image
-        counter[element] = number #write the just used image number
-
-        with open('counter.json', 'w', encoding='utf8') as f: # open counter-file to write number
-            json.dump(counter, f, indent=4) #write
-        return number
-
-def allowed_file(filename):
-    return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_IMAGE_EXTENSIONS
 
 if __name__ == "__main__":
   app.run(host="0.0.0.0", port="8081", threaded=False)

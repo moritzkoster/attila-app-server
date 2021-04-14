@@ -44,6 +44,30 @@
             "other": "Othermatt",
             "image": "arsch.jpg",
             "id": 1
+        },
+        {
+            "grade": "pios",
+            "name": "Aktivit\u00e4t",
+            "date": "01-01-1970",
+            "end_date": "02-01-1970",
+            "time": "bis am Halbi",
+            "place": "Fadihaim",
+            "take_away": "Salz",
+            "other": "Othermatt",
+            "image": "arsch.jpg",
+            "id": 2
+        },
+        {
+            "grade": "pios",
+            "name": "Aktivit\u00e4t",
+            "date": "01-01-1970",
+            "end_date": "02-01-1970",
+            "time": "bis am Halbi",
+            "place": "Fadihaim",
+            "take_away": "Salz",
+            "other": "Othermatt",
+            "image": "arsch.jpg",
+            "id": 3
         }
     ]
 }
