@@ -2,9 +2,9 @@
     "activities": [
         {
             "id": 0,
-            "group": "beavers",
+            "group": "wolves",
             "name": "\u00dcbung",
-            "date": "2021-02-10",
+            "date": "2020-02-10",
             "end_date": null,
             "time": "bis am Halbi",
             "place": "Gnigghetingen im Main",
@@ -14,9 +14,9 @@
         },
         {
             "id": 2,
-            "group": "beavers",
+            "group": "wolves",
             "name": "Aktivit\u00e4t",
-            "date": "2021-02-11",
+            "date": "2020-02-11",
             "end_date": "02-01-1970",
             "time": "bis am Halbi",
             "place": "Fadihaim",
@@ -26,9 +26,9 @@
         },
         {
             "id": 5,
-            "group": "beavers",
+            "group": "wolves",
             "name": "Aktivit\u00e4t",
-            "date": "2021-02-12",
+            "date": "2020-02-12",
             "end_date": "02-01-1970",
             "time": "bis am Halbi",
             "place": "Fadihaim",
@@ -37,9 +37,9 @@
             "image": "default.jpg"
         },
         {
-            "group": "beavers",
+            "group": "wolves",
             "name": "Aktivit\u00e4t",
-            "date": "2021-02-13",
+            "date": "2020-02-13",
             "end_date": "02-01-1970",
             "time": "bis am Halbi",
             "place": "Fadihaim",
@@ -49,9 +49,9 @@
             "id": 6
         },
         {
-            "group": "beavers",
+            "group": "wolves",
             "name": "Aktivit\u00e4t",
-            "date": "2021-02-14",
+            "date": "2020-02-14",
             "end_date": "02-01-1970",
             "time": "bis am Halbi",
             "place": "Fadihaim",
@@ -61,9 +61,9 @@
             "id": 7
         },
         {
-            "group": "beavers",
+            "group": "wolves",
             "name": "Aktivit\u00e4t",
-            "date": "2021-02-15",
+            "date": "2020-02-15",
             "end_date": "02-01-1970",
             "time": "bis am Halbi",
             "place": "Fadihaim",
@@ -73,9 +73,9 @@
             "id": 8
         },
         {
-            "group": "beavers",
+            "group": "wolves",
             "name": "Aktivit\u00e4t",
-            "date": "2021-04-10",
+            "date": "2020-03-10",
             "end_date": "02-01-1970",
             "time": "bis am Halbi",
             "place": "Fadihaim",
@@ -85,9 +85,9 @@
             "id": 9
         },
         {
-            "group": "beavers",
+            "group": "wolves",
             "name": "Aktivit\u00e4t",
-            "date": "2021-04-11",
+            "date": "2020-03-11",
             "end_date": "02-01-1970",
             "time": "bis am Halbi",
             "place": "Fadihaim",
@@ -97,9 +97,9 @@
             "id": 11
         },
         {
-            "group": "beavers",
+            "group": "wolves",
             "name": "Aktivit\u00e4t",
-            "date": "2021-04-12",
+            "date": "2020-03-12",
             "end_date": "02-01-1970",
             "time": "bis am Halbi",
             "place": "Fadihaim",
@@ -109,9 +109,9 @@
             "id": 12
         },
         {
-            "group": "beavers",
+            "group": "wolves",
             "name": "Aktivit\u00e4t",
-            "date": "2021-04-13",
+            "date": "2020-03-13",
             "end_date": "02-01-1970",
             "time": "bis am Halbi",
             "place": "Fadihaim",
@@ -121,7 +121,7 @@
             "id": 16
         },
         {
-            "group": "beavers",
+            "group": "wolves",
             "name": "Aktivit\u00e4t",
             "date": "2022-02-10",
             "end_date": "02-01-1970",
@@ -133,7 +133,7 @@
             "id": 17
         },
         {
-            "group": "beavers",
+            "group": "wolves",
             "name": "Aktivit\u00e4t",
             "date": "2022-02-11",
             "end_date": "02-01-1970",
@@ -145,9 +145,9 @@
             "id": 18
         },
         {
-            "group": "beavers",
+            "group": "wolves",
             "name": "Aktivit\u00e4t",
-            "date": "2021-02-15",
+            "date": "2020-02-15",
             "end_date": "02-01-1970",
             "time": "bis am Halbi",
             "place": "Fadihaim",
@@ -157,9 +157,9 @@
             "id": 19
         },
         {
-            "group": "beavers",
+            "group": "wolves",
             "name": "Aktivit\u00e4t",
-            "date": "2021-02-15",
+            "date": "2020-02-15",
             "end_date": "02-01-1970",
             "time": "bis am Halbi",
             "place": "Fadihaim",

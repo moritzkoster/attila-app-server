@@ -54,7 +54,7 @@ see also [noahzarro/attila-app](https://github.com/noahzarro/attila-app)
 ## Concepts
 
 ### Request future acitivites
-request the list(s) (`/activities/{grade}`) from the desired grades [beavers, wulfes, scouts, pios] and the needed images `/images/{name}`
+request the list(s) (`/activities/{grade}`) from the desired grades [beavers, wolves, scouts, pios] and the needed images `/images/{name}`
 
 ### Add new activity
 1. send `/imageforactivity`. answer contains a name for the uploaded image. format:  
