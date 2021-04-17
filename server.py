@@ -1,17 +1,19 @@
 from flask import Flask, request, render_template, send_from_directory
+from flask_cors import CORS
 import json
 import os
 
 ALLOWED_IMAGE_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif'}
 
 app = Flask(__name__, static_url_path="/static")
+CORS(app)
 
 @app.route("/activities/<grade>", methods = ["GET"])
 def activities(grade):
     if os.path.isfile("data/activities/" + grade + ".json"):                    #test for file
         with open("data/activities/" + grade + ".json") as file:
             data = json.load(file)
-            return json.dumps(data)
+            return data
     else:
         return "Invalid Request: grade <b>" + grade + "</b> does not exist. duu Arsch" #BAD REQUEST
 
