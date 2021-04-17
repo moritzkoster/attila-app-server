@@ -1,8 +1,7 @@
 from flask import Flask, request, render_template, send_from_directory
-from flask_cors import CORS
 import json
 import os
-import CORS
+from flask_cors import CORS
 
 import python.datamgmt as dm
 import python.auth as auth
