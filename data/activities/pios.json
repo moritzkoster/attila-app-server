@@ -2,39 +2,19 @@
     "activities": [
         {
             "id": 0,
-            "name": "Aktivit\u00e4t",
-            "date": "01-01-1970",
-            "end_date": "02-01-1970",
-            "time": "bis am Halbi",
-            "place": "Fadihaim",
-            "take_away": "Salz",
-            "other": "Othermatt",
-            "image": "arsch.jpg"
-        },
-        {
-            "id": 1,
-            "name": "Aktivit\u00e4t",
-            "date": "01-01-1970",
-            "end_date": null,
-            "time": "bis am Halbi",
-            "place": "Fadihaim",
-            "take_away": "Brot",
-            "other": "Ihr sind girigi Type",
-            "image": "arsch.jpg"
-        },
-        {
-            "id": 2,
+            "group": "pios",
             "name": "\u00dcbung",
             "date": "01-01-1970",
             "end_date": null,
             "time": "bis am Halbi",
-            "place": "Fadihaim",
-            "take_away": "Arschokolade",
+            "place": "Gnigghetingen im Main",
+            "take_away": "defaultokolade",
             "other": "De Calmo isch en Secco",
-            "image": "arsch.jpg"
+            "image": "default.jpg"
         },
         {
-            "grade": "pios",
+            "id": 2,
+            "group": "pios",
             "name": "Aktivit\u00e4t",
             "date": "01-01-1970",
             "end_date": "02-01-1970",
@@ -42,8 +22,91 @@
             "place": "Fadihaim",
             "take_away": "Salz",
             "other": "Othermatt",
+            "image": "default.jpg"
+        },
+        {
+            "id": 4,
+            "group": "pios",
+            "name": "Aktivit\u00e4t",
+            "date": "01-01-1970",
+            "end_date": "02-01-1970",
+            "time": "bis am Halbi",
+            "place": "Fadihaim",
+            "take_away": "Salz",
+            "other": "Othermatt",
+            "image": "default.jpg"
+        },
+        {
+            "id": 5,
+            "group": "pios",
+            "name": "Aktivit\u00e4t",
+            "date": "01-01-1970",
+            "end_date": "02-01-1970",
+            "time": "bis am Halbi",
+            "place": "Fadihaim",
+            "take_away": "Salz",
+            "other": "Othermatt",
+            "image": "default.jpg"
+        },
+        {
+            "group": "pios",
+            "name": "Aktivit\u00e4t",
+            "date": "01-01-1970",
+            "end_date": "02-01-1970",
+            "time": "bis am Halbi",
+            "place": "Fadihaim",
+            "take_away": "Salz",
+            "other": "Othermatt",
+            "image": "default.jpg",
+            "id": 6
+        },
+        {
+            "group": "pios",
+            "name": "Aktivit\u00e4t",
+            "date": "01-01-1970",
+            "end_date": "02-01-1970",
+            "time": "bis am Halbi",
+            "place": "Fadihaim",
+            "take_away": "Salz",
+            "other": "Othermatt",
+            "image": "default.jpg",
+            "id": 7
+        },
+        {
+            "group": "pios",
+            "name": "Aktivit\u00e4t",
+            "date": "01-01-1970",
+            "end_date": "02-01-1970",
+            "time": "bis am Halbi",
+            "place": "Fadihaim",
+            "take_away": "Salz",
+            "other": "Othermatt",
+            "image": "default.jpg",
+            "id": 8
+        },
+        {
+            "group": "pios",
+            "name": "Aktivit\u00e4t",
+            "date": "01-01-1970",
+            "end_date": "02-01-1970",
+            "time": "bis am Halbi",
+            "place": "Fadihaim",
+            "take_away": "Salz Mit Pizza",
+            "other": "Othermatt",
             "image": "arsch.jpg",
-            "id": 1
+            "id": 9
+        },
+        {
+            "group": "pios",
+            "name": "Aktivit\u00e4t",
+            "date": "01-01-1970",
+            "end_date": "02-01-1970",
+            "time": "bis am Halbi",
+            "place": "Fadihaim",
+            "take_away": "Salz Mit Pizza",
+            "other": "Othermatt",
+            "image": "arsch.jpg",
+            "id": 11
         }
     ]
 }
