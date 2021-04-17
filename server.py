@@ -1,6 +1,7 @@
 from flask import Flask, request, render_template, send_from_directory
 import json
 import os
+import CORS
 
 import python.datamgmt as dm
 import python.auth as auth
@@ -8,6 +9,7 @@ import python.auth as auth
 ALLOWED_IMAGE_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif'}
 
 app = Flask(__name__, static_url_path="/static")
+CORS(app)
 
 @app.route("/activities/<group>", methods = ["GET"])
 def activities(group):
