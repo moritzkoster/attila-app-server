@@ -7,22 +7,74 @@ def new_activity(request):
     if request.method == 'POST':
         if not request.json: # check if the post request has the json part
             return "Invalid Request: No data part in request"
-        data = request.json
-        append_activity(data)
+        new_activity = request.json
+
+        #TODO TEST DATA
+
+        new_activity["id"] = generate_id(new_activity["group"])
+        activities = get_activities(new_activity["group"])
+        activities.append(new_activity)
+
+        write_activities(activities)
+
         return "We recieved your stuff, thank you"
 
+
+def adapt_activity(request):
+    if request.method == 'POST':
+        if not request.json:
+            return "Invalid Request: No data part in request"
+        activity = request.json
+
+        #TODO: TEST DATA
+
+        activities = get_activities(activity["group"])
+        old_activity = get_by_id(activity["id"], activities)
+        for key, value in activity.items():
+            old_activity[key] = value
+        write_activities(activities)
+        return "We recieved your stuff, thank you"
+
+def delete_activity(request):
+    if request.method == 'DELETE':
+        if not request.json:
+            return "Invalid Request: No data part in request"
+
+        activity = request.json
+        activities = get_activities(activity["group"])
+        activity = get_by_id(activity["id"], activities)
+        activities.remove(activity)
+
+        write_activities(activities)
+        return "We Deleted your stuff, thank you"
+
+
 def append_activity(data):
-    filename = "data/activities/" + data["grade"] + ".json"
-    data["id"] = get_id(data["grade"])
+    filename = "data/activities/" + data["group"] + ".json"
+    data["id"] = generate_id(data["group"])
     with open(filename, "r") as f:
         content = json.load(f)
     content["activities"].append(data)
     with open(filename, "w") as f:
         json.dump(content, f, indent=4)
 
-def get_id(grade): #TODO
-    return counter(grade)
+def write_activities(data):
+    content = {"activities": data}
+    filename = "data/activities/" + data[0]["group"] + ".json"
+    with open(filename, "w") as f:
+        json.dump(content, f, indent=4)
 
+def generate_id(group):
+    return counter(group)
+
+def get_by_id(id, activities):
+    for activity in activities:
+        if activity["id"] == int(id):
+            return activity
+    return False
+
+def get_activities(group):
+    return json.load(open("data/activities/" + group + ".json", "r"))["activities"]
 #IMAGE--------------------------------------------------------------------------
 
 def save_image(request, purpose):

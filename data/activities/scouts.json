@@ -1,37 +1,112 @@
 {
-  "activities":[
-    {
-      "id": 0,
-      "name": "Aktivität",
-      "date": "01-01-1970",
-      "end_date": "02-01-1970",
-      "time": "bis am Halbi",
-      "place": "Fadihaim",
-      "take_away": "Salz",
-      "other": "Othermatt",
-      "image": "arsch.jpg"
-    },
-    {
-      "id": 1,
-      "name": "Aktivität",
-      "date": "01-01-1970",
-      "end_date": null,
-      "time": "bis am Halbi",
-      "place": "Fadihaim",
-      "take_away": "Brot",
-      "other": "Ihr sind girigi Type",
-      "image": "arsch.jpg"
-    },
-    {
-      "id": 2,
-      "name": "Übung",
-      "date": "01-01-1970",
-      "end_date": null,
-      "time": "bis am Halbi",
-      "place": "Fadihaim",
-      "take_away": "Arschokolade",
-      "other": "De Calmo isch en Secco",
-      "image": "arsch.jpg"
-    }
-  ]
+    "activities": [
+      {
+          "id": 0,
+          "group": "scouts",
+          "name": "\u00dcbung",
+          "date": "01-01-1970",
+          "end_date": null,
+          "time": "bis am Halbi",
+          "place": "Fadihaim",
+          "take_away": "defaultokolade",
+          "other": "De Calmo isch en Secco",
+          "image": "default.jpg"
+      },
+      {
+          "id": 1,
+          "group": "scouts",
+          "name": "Aktivit\u00e4t",
+          "date": "01-01-1970",
+          "end_date": "02-01-1970",
+          "time": "bis am Halbi",
+          "place": "Fadihaim",
+          "take_away": "Salz",
+          "other": "Othermatt",
+          "image": "default.jpg"
+      },
+      {
+          "id": 2,
+          "group": "scouts",
+          "name": "Aktivit\u00e4t",
+          "date": "01-01-1970",
+          "end_date": "02-01-1970",
+          "time": "bis am Halbi",
+          "place": "Fadihaim",
+          "take_away": "Salz",
+          "other": "Othermatt",
+          "image": "default.jpg"
+      },
+      {
+          "id": 3,
+          "group": "scouts",
+          "name": "Aktivit\u00e4t",
+          "date": "01-01-1970",
+          "end_date": "02-01-1970",
+          "time": "bis am Halbi",
+          "place": "Fadihaim",
+          "take_away": "Salz",
+          "other": "Othermatt",
+          "image": "default.jpg"
+      },
+      {
+          "id": 4,
+          "group": "scouts",
+          "name": "Aktivit\u00e4t",
+          "date": "01-01-1970",
+          "end_date": "02-01-1970",
+          "time": "bis am Halbi",
+          "place": "Fadihaim",
+          "take_away": "Salz",
+          "other": "Othermatt",
+          "image": "default.jpg"
+      },
+      {
+          "id": 5,
+          "group": "scouts",
+          "name": "Aktivit\u00e4t",
+          "date": "01-01-1970",
+          "end_date": "02-01-1970",
+          "time": "bis am Halbi",
+          "place": "Fadihaim",
+          "take_away": "Salz",
+          "other": "Othermatt",
+          "image": "default.jpg"
+      },
+      {
+          "group": "scouts",
+          "name": "Aktivit\u00e4t",
+          "date": "01-01-1970",
+          "end_date": "02-01-1970",
+          "time": "bis am Halbi",
+          "place": "Fadihaim",
+          "take_away": "Salz",
+          "other": "Othermatt",
+          "image": "default.jpg",
+          "id": 6
+      },
+      {
+          "group": "scouts",
+          "name": "Aktivit\u00e4t",
+          "date": "01-01-1970",
+          "end_date": "02-01-1970",
+          "time": "bis am Halbi",
+          "place": "Fadihaim",
+          "take_away": "Salz",
+          "other": "Othermatt",
+          "image": "default.jpg",
+          "id": 7
+      },
+      {
+          "group": "scouts",
+          "name": "Aktivit\u00e4t",
+          "date": "01-01-1970",
+          "end_date": "02-01-1970",
+          "time": "bis am Halbi",
+          "place": "Fadihaim",
+          "take_away": "Salz",
+          "other": "Othermatt",
+          "image": "default.jpg",
+          "id": 8
+      }
+    ]
 }

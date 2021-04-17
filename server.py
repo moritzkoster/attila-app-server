@@ -9,14 +9,14 @@ ALLOWED_IMAGE_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif'}
 
 app = Flask(__name__, static_url_path="/static")
 
-@app.route("/activities/<grade>", methods = ["GET"])
-def activities(grade):
-    if os.path.isfile("data/activities/" + grade + ".json"):                    #test for file
-        with open("data/activities/" + grade + ".json") as file:
+@app.route("/activities/<group>", methods = ["GET"])
+def activities(group):
+    if os.path.isfile("data/activities/" + group + ".json"):                    #test for file
+        with open("data/activities/" + group + ".json") as file:
             data = json.load(file)
-            return json.dumps(data)
+            return data
     else:
-        return "Invalid Request: grade <b>" + grade + "</b> does not exist. duu Arsch" #BAD REQUEST
+        return "Invalid Request: group <b>" + group + "</b> does not exist. duu Arsch" #BAD REQUEST
 
 @app.route('/images/<name>', methods = ["GET"])
 def images(name):
@@ -38,6 +38,18 @@ def new_activity():
     if not auth.authenticate(): #TODO
         return "You are not allowed to do This"
     return dm.new_activity(request)
+
+@app.route('/adaptactivity', methods=['GET', 'POST'])
+def adapt_activity():
+    if not auth.authenticate(): #TODO
+        return "You are not allowed to do This"
+    return dm.adapt_activity(request)
+
+@app.route('/deleteactivity', methods=['DELETE'])
+def delete_activity():
+    if not auth.authenticate(): #TODO
+        return "You are not allowed to do This"
+    return dm.delete_activity(request)
 
 @app.route("/<request>")
 def bad_request(request):
