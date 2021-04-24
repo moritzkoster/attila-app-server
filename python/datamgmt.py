@@ -6,7 +6,7 @@ import os
 def new_activity(request):
     if request.method == 'POST':
         if not request.json: # check if the post request has the json part
-            return "Invalid Request: No data part in request"
+            return "Invalid Request: No data part in request", 400
         new_activity = request.json
 
         #TODO TEST DATA
@@ -23,7 +23,7 @@ def new_activity(request):
 def adapt_activity(request):
     if request.method == 'POST':
         if not request.json:
-            return "Invalid Request: No data part in request"
+            return "Invalid Request: No data part in request", 400
         activity = request.json
 
         #TODO: TEST DATA
@@ -38,7 +38,7 @@ def adapt_activity(request):
 def delete_activity(request):
     if request.method == 'DELETE':
         if not request.json:
-            return "Invalid Request: No data part in request"
+            return "Invalid Request: No data part in request", 400
 
         activity = request.json
         activities = get_activities(activity["group"])
@@ -46,7 +46,7 @@ def delete_activity(request):
         activities.remove(activity)
 
         write_activities(activities)
-        return "We Deleted your stuff, thank you"
+        return "We deleted your stuff, thank you"
 
 
 def append_activity(data):
@@ -80,13 +80,13 @@ def get_activities(group):
 def save_image(request, purpose):
     if request.method == 'POST':
         if 'file' not in request.files: # check if the post request has the file part
-            return "Invalid Request: No file part in request"
+            return "Invalid Request: No file part in request", 400
         file = request.files['file']
         if file.filename == '': #check if no file
-            return "Invalid Request: There is no file selected"
+            return "Invalid Request: There is no file selected", 400
 
         if not allowed_file(file.filename):
-            return "Invalid Request: File type is not allowed: " + file.filename
+            return "Invalid Request: File type is not allowed: " + file.filename, 400
 
         extension = file.filename.split(".")[1] # check file extension/format
         imagename = get_imagename(purpose, extension) #new filename + old extension
