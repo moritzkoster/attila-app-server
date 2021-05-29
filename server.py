@@ -17,45 +17,39 @@ def activities(group):
         with open("data/activities/" + group + ".json") as file:
             data = json.load(file)
             return data
-    else:
-        return "Invalid Request: group <b>" + group + "</b> does not exist. duu Arsch" #BAD REQUEST
+    return "Invalid Request: group <b>" + group + "</b> does not exist. Du Arsch", 404 #BAD REQUEST
 
 @app.route('/images/<name>', methods = ["GET"])
 def images(name):
     if os.path.isfile("data/images/" + name):                                   #test for file
         return send_from_directory("data/images", name)
-    else:
-        return "Invalid Request: file <b>" + name + "</b> does not exist. duu Arsch" #BAD REQUEST
+    return "Invalid Request: file <b>" + name + "</b> does not exist. Du Arsch", 404 #BAD REQUEST
 
 
-@app.route('/imageforactivity', methods=['GET', 'POST'])
+@app.route('/imageforactivity', methods=['POST'])
 def upload_image():
     if not auth.authenticate(): #TODO
-        return "You are not allowed to do This"
+        return "You are not allowed to do this", 401
     return dm.save_image(request, purpose="activity")
 
 
-@app.route('/newactivity', methods=['GET', 'POST'])
+@app.route('/newactivity', methods=['POST'])
 def new_activity():
     if not auth.authenticate(): #TODO
-        return "You are not allowed to do This"
+        return "You are not allowed to do this", 401
     return dm.new_activity(request)
 
-@app.route('/adaptactivity', methods=['GET', 'POST'])
+@app.route('/adaptactivity', methods=['POST'])
 def adapt_activity():
     if not auth.authenticate(): #TODO
-        return "You are not allowed to do This"
+        return "You are not allowed to do this", 401
     return dm.adapt_activity(request)
 
 @app.route('/deleteactivity', methods=['DELETE'])
 def delete_activity():
     if not auth.authenticate(): #TODO
-        return "You are not allowed to do This"
+        return "You are not allowed to do this", 401
     return dm.delete_activity(request)
-
-@app.route("/<request>")
-def bad_request(request):
-    return "Invalid Request: <b>" + request + "</b> does not exist. duu Arsch"  #BAD REQUEST
 
 if __name__ == "__main__":
   app.run(host="0.0.0.0", port="8081", threaded=False)
