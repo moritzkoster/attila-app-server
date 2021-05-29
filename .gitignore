@@ -1,2 +1,3 @@
 test_Post_request.py
 .vscode
+*.pyc
